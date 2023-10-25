@@ -8,16 +8,19 @@
     <h1>Testing HTML Code</h1>
 <!-- Button -->
       <p>This is a button.</p>
-      <button id="button-function" onClick="buttonClick()">Click Me!</button>
+      <button onClick="buttonClick()">Main Link</button>
+      <button onClick="runButton()">Run</button>
       
 </div>
   </body>
   <script>
     function buttonClick()
-      {
-        
+      {     
 window.location.href = "https://www.example.com";
-
+      }
+    function runButton()
+      {
+        <iframe src="https://www.example.com"></iframe>
       }
   </script>
 </html>
