@@ -1,20 +1,66 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing HTML</title>
-    <style>
-    body {
-      background-color: #000; /* Set the background color to black */
-      color: #fff; /* Set text color to white for contrast */
-      margin: 0; /* Remove default margin */
-      padding: 0; /* Remove default padding */
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Ultraviolet | Sophisticated Web Proxy</title>
+    <meta name="description" content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!">
+    <meta name="keywords" content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#434c5e">
+    <meta name="googlebot" content="index, follow, snippet">
+    <link rel="shortcut icon" content="favicon.ico">
+    <link rel="stylesheet" href="index.css">
+    <script src="/uv/uv/uv.bundle.js?v=1" defer=""></script>
+    <script src="/uv/uv/uv.config.js?v=1" defer=""></script>
+    <script src="register-sw.js" defer=""></script>
+    <script src="search.js" defer=""></script>
+    <script src="index.js" defer=""></script>
+  <style type="text/css" id="operaUserStyle">
+    video {
+      filter: -opera-shader(url(data:text/plain;base64,dW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmhhbGYzIHBpeGVsKGNvbnN0IGludCB4LCBjb25zdCBpbnQgeSwgaW4gaGFsZjIgeHkpCnsKCXJldHVybiBpQ2h1bmsuZXZhbCh4eSArIGhhbGYyKHgsIHkpKS5yZ2I7Cn0gIAoKaGFsZjMgUkdYKGhhbGYyIHh5KXsKCWhhbGYzIGYgPQoJcGl4ZWwoLTEsLTEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwtMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsLTEsIHh5KSAqICAxLiArCgkKCXBpeGVsKC0xLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMCwgeHkpICogLTIuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJCglwaXhlbCgtMSwgMSwgeHkpICogIDEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAwLCAxLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsIDEsIHh5KSAqICAxLgoJOwoJcmV0dXJuIGYgLyAtMjsKfQoKaGFsZjMgUkdYTW9yZShoYWxmMiB4eSl7CgloYWxmMyBmID0KCXBpeGVsKC0xLC0xLCB4eSkgKiAgMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsLTEsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLC0xLCB4eSkgKiAgMS4gKwoJCglwaXhlbCgtMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsIDAsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCQoJcGl4ZWwoLTEsIDEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAxLCB4eSkgKiAgMS4gCgk7CglyZXR1cm4gZiAvIC0xOwp9CgoKaGFsZjQgbWFpbihmbG9hdDIgeHkpCnsKCWhhbGY0IGNvbG9yID0gaUNodW5rLmV2YWwoeHkpOwoJCglpZiAoY29sb3IuYSA8IDEpIHsKCQlyZXR1cm4gY29sb3I7Cgl9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPCBNSU5fQVJFQSkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoaUNodW5rU2l6ZS55IDwgTUlOX1NUUklQIHx8IGlDaHVua1NpemUueCA8IE1JTl9TVFJJUCkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoeHkueCA8IE1BUkdJTiB8fCB4eS54ID4gKGlDaHVua1NpemUueCAtIE1BUkdJTikgfHwKCSAgICB4eS55IDwgTUFSR0lOIHx8IHh5LnkgPiAoaUNodW5rU2l6ZS55IC0gTUFSR0lOKSkgewogICAgCXJldHVybiBjb2xvcjsgICAgCiAgICB9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPiBUSFJFU0hPTERfQVJFQSkgewoJCWNvbG9yID0gaGFsZjQoUkdYTW9yZSh4eSksIDEpOwoJfSBlbHNlIHsKCQljb2xvciA9IGhhbGY0KFJHWCh4eSksIDEpOwoJfQoKCXJldHVybiBjb2xvcjsKfQo=));
     }
-  </style>
-  </head>
+  </style><style type="text/css"></style></head>
+
   <body>
-    <div class="centered-text">
-    <img src="example.jpg" alt="">
-      <h>Sachen</h>
-</div>
-  </body>
-</html>
+    <div title="Ultraviolet Logo" class="flex-center logo-wrapper header-center">
+      <img class="logo" src="uv.png" alt="Ultraviolet">
+      <h1>Ultraviolet | TN | Mediaology</h1>
+    </div>
+    <div class="flex-center desc">
+      <p>
+        Ultraviolet is highly sophisticated proxy used for evading internet
+        censorship.
+      </p>
+    </div>
+
+    <form id="uv-form" class="flex-center">
+      <input id="uv-search-engine" value="https://search.brave.com/search?q=%s" type="hidden">
+      <input id="uv-address" type="text" placeholder="Search the web freely">
+    </form>
+    <div class="desc left-margin">
+      <p id="uv-error"></p>
+      <pre id="uv-error-code"></pre>
+      <div class="flex-center desc" style="color: white;">
+      <h4>Info</h4>
+      <ul>
+          <li>Porn is blocked by me</li>
+          <li>Urls work better (include the https:// )</li>
+          <li>Everything else should be unblocked</li>
+          <li>I moniter the sites that are viewed (i see you guy with a mille bobbie brown fetish)</li>
+          <li>By using this service you give me full legal rights and permision over your internet traffic, including but not limited to cookis, header data, and urls</li>
+          <li>if stuff throws an error hit <button onclick="reregister()">reset</button></li>
+      </ul>
+      <br>
+      </div>
+    <div class="flex-center" style="color: white;">Ultraviolet © TN 2022</div>
+    <script>
+    function reregister(){
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+ for(let registration of registrations) {
+  registration.unregister()
+} })
+window.location.reload();
+}
+    </script>
+    </div>
+  
+
+</body></html>
